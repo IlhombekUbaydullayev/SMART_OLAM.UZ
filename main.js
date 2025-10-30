@@ -2,32 +2,32 @@
 var image = [
     {
        text : "Frontend kursi",
-       rasm : './smart_olam.jpg',
+       rasm : './images/smart_olam.jpg',
        davomiyligi : '6 oy'
     },
     {
        text : "Backend kursi",
-       rasm : './smart_olam.jpg',
+       rasm : './images/smart_olam.jpg',
        davomiyligi : '12 oy'
     },
     {
        text : "Kompyuter savodxonligi",
-       rasm : './smart_olam.jpg',
+       rasm : './images/smart_olam.jpg',
        davomiyligi : '3 oy'
     },
     {
        text : "Bugalteriya",
-       rasm : './smart_olam.jpg',
+       rasm : './images/smart_olam.jpg',
        davomiyligi : '4 oy'
     },
     {
        text : "Robotexnika",
-       rasm : './smart_olam.jpg',
+       rasm : './images/smart_olam.jpg',
        davomiyligi : '6 oy'
     },
     {
        text : "Ingliz tili",
-       rasm : './smart_olam.jpg',
+       rasm : './images/smart_olam.jpg',
        davomiyligi : '12 oy'
     } 
 ]
@@ -47,5 +47,6 @@ for(var i = 0; i < image.length; i++){
 
 function sendData(image){
     localStorage.setItem("text",image.text)
+    localStorage.setItem("img",image.rasm)
     window.location.href = "courses.html"
 }

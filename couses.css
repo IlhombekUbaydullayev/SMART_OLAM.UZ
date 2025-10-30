@@ -1,0 +1,193 @@
+.img_f{
+    width: 60%;
+}
+
+.t_center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header{
+    background: #1a73e8;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+}
+
+header h1{
+    margin: 0;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    font-weight: bold;
+    transition: all 0.3s linear;
+    display: inline-block;
+}
+
+nav a:hover{
+    color: yellow;
+    transform: scale(1.2);
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  margin: 0;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+
+/* Kurslar bo‘limi */
+.courses {
+  padding: 50px 0;
+}
+
+.courses h2 {
+  font-size: 36px;
+  color: #0a63d1;
+  margin-bottom: 40px;
+  margin-left: 4rem;
+}
+
+.course-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  width: 90%;
+  margin: 0 auto;
+  align-items: stretch; /* 🔹 barcha kartalar bir balandlikda bo‘ladi */
+}
+
+.course-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  text-align: center;
+  padding: 25px 15px;
+  display: flex;
+  flex-direction: column; /* 🔹 ichidagi elementlar ustma-ust joylashadi */
+  justify-content: space-between; /* 🔹 rasm, matn, sarlavha chiroyli ajraladi */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.course-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.course-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain; /* 🔹 rasm buzilmasdan markazda turadi */
+  margin: 0 auto 15px;
+}
+
+.course-card h3 {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  color: #0a63d1;
+  min-height: 48px; /* 🔹 sarlavha uzun bo‘lsa ham tekis turadi */
+}
+
+.course-card p {
+  flex-grow: 1;
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  padding: 0 10px;
+}
+
+/* Footer */
+footer {
+  background-color: #0a63d1;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 40px;
+}
+
+
+
+.course-hero {
+  background: linear-gradient(135deg, #f0f7ff, #dbe9ff);
+  padding: 80px 0;
+}
+
+.course-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.course-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.course-text {
+  flex: 1;
+  max-width: 550px;
+}
+
+.course-text h1 {
+  font-size: 48px;
+  color: #0a63d1;
+  margin-bottom: 15px;
+}
+
+.course-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #0a63d1;
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #084ea5;
+}
+
+/* 📱 Mobil moslashuv */
+@media (max-width: 768px) {
+  .course-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .course-text h1 {
+    font-size: 36px;
+  }
+
+  .course-text p {
+    font-size: 16px;
+  }
+}

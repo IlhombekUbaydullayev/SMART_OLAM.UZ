@@ -1,153 +1,366 @@
-body{
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: #f5f5f5;
+/* === Global === */
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  transition: all 0.4s ease;
 }
 
-header{
-    background: #1a73e8;
-    color: white;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  background: linear-gradient(135deg, #eef2f3, #d9e4f5);
+  color: #333;
 }
 
-header h1{
-    margin: 0;
+/* === Header === */
+header {
+  background: linear-gradient(90deg, #1a73e8, #0048ff);
+  color: white;
+  padding: 18px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(6px);
 }
 
-nav a{
-    color: white;
-    text-decoration: none;
-    margin-left: 15px;
-    font-weight: bold;
-    transition: all 0.3s linear;
-    display: inline-block;
+header h1 {
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 1.6rem;
+  cursor: pointer;
 }
 
-nav a:hover{
-    color: yellow;
-    transform: scale(1.2);
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 25px;
+  font-weight: 600;
+  position: relative;
 }
 
-.hero{
-    background: url('https://via.placeholder.com/1200x500') center/cover no-repeat;
-    color: white;
-    text-align: center;
-    padding: 80px 20px;
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background: #ffcc00;
+  transition: 0.4s;
 }
 
-.hero-text{
-    background: rgba(0,0,0,0.5);
-    display: inline-block;
-    padding: 20px;
-    border-radius: 10px;
+nav a:hover::after {
+  width: 100%;
 }
 
-.btn{
-    background: #ff9800;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    display: inline-block;
-    border-radius: 5px;
-    transition: background 0.3s;
+/* === Hero Section === */
+.hero {
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4)
+    ),
+    url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80")
+      center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 140px 20px;
+  position: relative;
+  overflow: hidden;
 }
 
-.btn:hover{
-    background: #e68900;
+.hero h2 {
+  font-size: 2.8rem;
+  animation: fadeDown 1s ease;
 }
 
-section{
-    padding: 40px;
-    background: white;
-    margin: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 3px 8px rgba(0,0,0,0.1);
+.hero p {
+  font-size: 1.2rem;
+  margin-top: 15px;
+  animation: fadeUp 1s ease;
 }
 
-section img{
-    width: 100%;
-    border-radius: 8px;
-    margin-top: 20px;
+.hero .btn {
+  background: linear-gradient(90deg, #ff9800, #ff5722);
+  border: none;
+  padding: 14px 34px;
+  border-radius: 50px;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 25px;
+  display: inline-block;
+  cursor: pointer;
+  box-shadow: 0 5px 20px rgba(255, 87, 34, 0.4);
 }
 
-form{
-    display: flex;
+.hero .btn:hover {
+  background: linear-gradient(90deg, #ffa733, #ff7043);
+  transform: scale(1.05);
+}
+
+/* === Section Base === */
+section {
+  padding: 80px 20px;
+  margin: 60px auto;
+  width: 90%;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+#about {
+  background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(230,240,255,0.95)),
+              url("https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1400&q=80")
+              center/cover no-repeat;
+  backdrop-filter: blur(6px);
+}
+
+/* Courses Section */
+#courses {
+  background: linear-gradient(120deg, rgba(26,115,232,0.9), rgba(0,72,255,0.85)),
+              url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1400&q=80")
+              center/cover no-repeat;
+  color: white;
+}
+
+#courses h2::after {
+  background: #ffcc00;
+}
+
+/* Contact Section */
+#contact {
+  background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(220,240,255,0.9)),
+              url("https://images.unsplash.com/photo-1520975922236-7bdb06a2e7a9?auto=format&fit=crop&w=1400&q=80")
+              center/cover no-repeat;
+  backdrop-filter: blur(4px);
+}
+
+/* Section headinglar */
+section h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  position: relative;
+  font-weight: 700;
+}
+
+/* Har bir section uchun maxsus effekt */
+section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.2), transparent 70%);
+  transform: rotate(25deg);
+  z-index: 0;
+}
+
+section * {
+  position: relative;
+  z-index: 1;
+}
+
+/* === About Section === */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 35px;
+}
+
+.box {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  border: 5px solid #1a73e8;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.1);
+  transition: all 0.5s ease;
+}
+
+.box:hover img {
+  transform: scale(1.25) rotate(5deg);
+}
+
+/* === Courses Section === */
+.course_b {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.course_box {
+  width: 300px;
+  background: white;
+  border-radius: 18px;
+  text-align: center;
+  padding: 2rem 1rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.course_box::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(120deg, rgba(26,115,232,0.15), transparent);
+  transform: rotate(45deg);
+  transition: 0.6s ease;
+}
+
+.course_box:hover::before {
+  left: 0%;
+  top: 0%;
+}
+
+.course_box img {
+  width: 80px;
+  margin-bottom: 15px;
+}
+
+.course_box h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #1a73e8;
+}
+
+.course_box p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* === Contact Section === */
+form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+form input,
+form textarea {
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #1a73e8;
+  box-shadow: 0 0 8px rgba(26, 115, 232, 0.3);
+}
+
+form button {
+  background: linear-gradient(90deg, #1a73e8, #0048ff);
+  color: white;
+  border: none;
+  padding: 14px 0;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: linear-gradient(90deg, #2f8af5, #3367ff);
+  transform: translateY(-3px);
+}
+
+/* === Footer === */
+footer {
+  background: linear-gradient(90deg, #0048ff, #1a73e8);
+  color: white;
+  text-align: center;
+  padding: 25px 10px;
+  margin-top: 50px;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+footer img {
+  width: 40px;
+  margin: 10px;
+  transition: 0.4s ease;
+}
+
+footer img:hover {
+  transform: scale(1.2) rotate(10deg);
+}
+
+/* === Keyframes === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  header {
     flex-direction: column;
-}
-
-form input, form textarea{
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-form textarea{
-    height: 100px;
-}
-
-footer{
-    background: #1a73e8;
-    color: white;
     text-align: center;
-    padding: 10px;
-}
+    padding: 20px;
+  }
 
+  nav {
+    margin-top: 10px;
+  }
 
+  .hero h2 {
+    font-size: 1.8rem;
+  }
 
-
-.telegram{
-    width: 40px;
-    height: 40px;
-    margin-left: .6rem;
-    margin-right: .6rem;
-}
-
-.course_box{
-    width: 25%;
-    background-color: #eeeeee;
-    padding: 1rem;
-    border-radius: 10px;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-}
-
-.img_course{
-    width: 20% !important;
-}
-
-.course_box p{
-    text-align: end;
-}
-
-.course_b{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-
-@media (max-width: 760px) {
-
-    nav{
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .hero{
-        padding: 40px 10px;
-    }
-
-}
-
-@media (max-width: 479px) {
-
-    .course_box{
-        width: 100%;
-    }
-
+  .course_box {
+    width: 90%;
+  }
 }
